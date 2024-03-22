@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
-import { generateClient as apiGenerateClient } from "aws-amplify/api";
+
+import { generateClient } from "aws-amplify/api";
+
+
 import {
   Button,
   Flex,
@@ -18,8 +20,7 @@ import {
   deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
 
-const client  =  apiGenerateClient()
-
+const client = generateClient();
 const App = ({ signOut }) => {
   const [notes, setNotes] = useState([]);
 
